@@ -33,7 +33,7 @@
 <script>
     async function getContent() {
         try {
-            const response = await fetch('http://localhost:3000/users')
+            const response = await fetch('http://localhost:3000/users') //fetch para consumir o back através da rota pré gerada
             const data = await response.json()
 
             show(data)
@@ -54,7 +54,7 @@
 
 
         for (let user of users.rows) {
-            output += `<li>${user.nome}<\li>`
+            output += `<li>${user.nome}<\li>` //iteramos o json recebido para mostra-lo no html
         }
 
 
