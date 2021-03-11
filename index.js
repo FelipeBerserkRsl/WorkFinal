@@ -1,6 +1,9 @@
 const express = require('express') //importa o modulo express
+const cors = require('cors')
 
 const server = express()
+
+server.use(cors())
 
 const mysql = require('mysql');
 
@@ -26,7 +29,7 @@ connection.query('SELECT * FROM jogador', function(err, rows, fields){
     if(!err){
         console.log("Resultado", rows);
 
-        server.get('/users',(req, res) => {  //cria a rota user que gera um consolelog testando
+        server.get('/users',(req, res) => {  //cria rota get
     
             return res.json({rows})
         })
